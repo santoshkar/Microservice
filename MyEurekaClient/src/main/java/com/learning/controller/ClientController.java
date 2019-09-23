@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.learning.Employee;
 
 @RestController
-public class MessageController {
+public class ClientController {
 	
 	public Map<Long, Employee> empMap;
 	

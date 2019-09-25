@@ -29,7 +29,7 @@ public class ClientController {
 	}
 
 	@RequestMapping("/message")
-	public String message() {
+	public String messagesettset() {
 		return "Hello, this is from client - 1";
 	}
 	

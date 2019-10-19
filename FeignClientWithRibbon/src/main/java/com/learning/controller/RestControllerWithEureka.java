@@ -1,18 +1,18 @@
 package com.learning.controller;
 
-import com.learning.feign.EmployeeFeignClient;
-import com.learning.service.EmployeeService;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import com.learning.service.EmployeeService;
 
 @RestController
-public class MsgControllerWithEureka {
+public class RestControllerWithEureka {
 
-    @Autowired
+	@Autowired
     private EmployeeService employeeService;
 
 	@GetMapping("/empservice/{id}")

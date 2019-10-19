@@ -1,13 +1,14 @@
 package com.learning.service;
 
-import com.learning.controller.Employee;
-import com.learning.feign.EmployeeFeignClient;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import java.util.List;
+import com.learning.controller.Employee;
+import com.learning.feign.EmployeeFeignClient;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 @Service
 public class EmployeeService {
@@ -21,18 +22,16 @@ public class EmployeeService {
 	    /*
 	    This is how we can communicate with another micro-service
 	     */
-        Employee emp = employeeFeignClient.getEmployeeById(empId);
-        return emp;
+        return employeeFeignClient.getEmployeeById(empId);
     }
 
-    //@HystrixCommand(fallbackMethod = "callStudentServiceAndGetData_Fallback")
+    //@HystrixCommand(fallbackMethod = "employeeServiceFailure_Fallback")
     public List<Employee> readEmpFromEmpFeignClient() {
-
-        List<Employee> emp = employeeFeignClient.getAllEmployee();
-        return emp;
+        return employeeFeignClient.getAllEmployee();
     }
 
-    private Employee employeeServiceFailure_Fallback(long empId) {
+    @SuppressWarnings("unused")
+	private Employee employeeServiceFailure_Fallback(long empId) {
 
         System.out.println("Employee Service is down!!! fallback route enabled...");
         return new Employee();

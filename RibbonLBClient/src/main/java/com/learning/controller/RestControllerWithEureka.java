@@ -1,51 +1,33 @@
 package com.learning.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.ServiceInstance;
-import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
+
+import com.learning.service.EmployeeService;
 
 @RestController
 public class RestControllerWithEureka {
 	
-	/*
 	@Autowired
-	private DiscoveryClient discoveryClient;
-	*/
-	
-	@Autowired
-	private RestTemplate restTemplate;
-	
-	@Autowired
-	private LoadBalancerClient loadBalancerClient;
+	private EmployeeService employeeService;
 
 	@GetMapping("/fromOtherClientWithEureka")
 	public String readFromOtherClient() {
-		/*
-		List<ServiceInstance> instances = discoveryClient.getInstances("FIRST EUREKA CLIENT");
-		String host = instances.get(0).getUri().toString();
-		*/
-		
-		ServiceInstance instance = loadBalancerClient.choose("FIRSTEUREKACLIENT");
-		String host = instance.getUri().toString();
-		String mapping = "/message";
-		String uri = host+mapping;
-		String msg = restTemplate.getForObject(uri, String.class).toString();
-		return msg;
+		return employeeService.readFromOtherClient();
 	}
 	
 	@GetMapping("/empservice/{id}")
 	public Employee readEmpFromEmpMicroService(@PathVariable("id") long empId) {
-	
-		ServiceInstance instance = loadBalancerClient.choose("FIRSTEUREKACLIENT");
-		String host = instance.getUri().toString();
-		String mapping = "/employee/{0}";
-		String uri = host+mapping;
-		ResponseEntity<Employee> empEntity = restTemplate.getForEntity(uri, Employee.class, empId);
-		return empEntity.getBody();
+		return employeeService.readEmpFromEmpMicroService(empId);
 	}
+	
+	@GetMapping("/empservice")
+    public List<Employee> findEmployees() {
+        List<Employee> emp = employeeService.readEmpFromEmpMicroService();
+        return emp;
+    }
 }

@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.learning.controller.Employee;
 
+
+//This is the Client Micro-service we are going to communicate with
 @FeignClient(name="FIRSTEUREKACLIENT")
 public interface EmployeeFeignClient {
 

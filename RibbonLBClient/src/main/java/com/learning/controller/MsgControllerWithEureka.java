@@ -30,7 +30,7 @@ public class MsgControllerWithEureka {
 		String host = instances.get(0).getUri().toString();
 		*/
 		
-		ServiceInstance instance = loadBalancerClient.choose("FIRST EUREKA CLIENT");
+		ServiceInstance instance = loadBalancerClient.choose("FIRSTEUREKACLIENT");
 		String host = instance.getUri().toString();
 		String mapping = "/message";
 		String uri = host+mapping;
@@ -41,7 +41,7 @@ public class MsgControllerWithEureka {
 	@GetMapping("/empservice/{id}")
 	public Employee readEmpFromEmpMicroService(@PathVariable("id") long empId) {
 	
-		ServiceInstance instance = loadBalancerClient.choose("FIRST EUREKA CLIENT");
+		ServiceInstance instance = loadBalancerClient.choose("FIRSTEUREKACLIENT");
 		String host = instance.getUri().toString();
 		String mapping = "/employee/{0}";
 		String uri = host+mapping;

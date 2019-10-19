@@ -40,7 +40,7 @@ public class ClientController {
 	
 	@GetMapping("/employee")
 	public List<Employee> getAllEmployees() {
-		return new ArrayList<Employee>(empMap.values());
+		return new ArrayList<>(empMap.values());
 	}
 	
 	@PreDestroy

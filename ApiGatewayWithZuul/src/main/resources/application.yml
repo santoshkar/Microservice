@@ -10,11 +10,11 @@ spring:
 
 zuul:
   routes:
-    service_1:
-      path: /api/service_1/**
-      service-id: FIRSTEUREKACLIENT
-#      url: http://localhost:8080/
-    service_2:
-      path: /api/service_2/**
-      url: http://localhost:8080/
+    api-gateway-with-eureka:
+      path: /api/with-eureka/**
+      service-id: FIRSTEUREKACLIENT     #This is the Service Id of the micro-service registered in Eureka
+    api-gateway-without-eureka:
+      path: /api/without-eureka/**
+      url: http://localhost:8080/       #This is the URL of the micro-service
+
 

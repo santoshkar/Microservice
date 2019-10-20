@@ -1,0 +1,19 @@
+
+
+server:
+  port: 8085
+ 
+spring:
+  application:
+    name: api-gateway
+    
+
+zuul:
+  routes:
+    service_1:
+      path: /api/service_1/**
+      url: http://localhost:8080/
+    service_2:
+      path: /api/service_2/**
+      url: http://localhost:8080/
+

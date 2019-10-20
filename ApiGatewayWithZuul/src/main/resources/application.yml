@@ -16,5 +16,9 @@ zuul:
     api-gateway-without-eureka:
       path: /api/without-eureka/**
       url: http://localhost:8080/       #This is the URL of the micro-service
-
-
+#    spring-security-oauth-resource:
+#      path: /spring-security-oauth-resource/**
+#      url: http://localhost:8090/spring-security-oauth-resource
+#    oauth:
+#      path: /oauth/**
+#      url: http://localhost:8081/spring-security-oauth-server/oauth 

@@ -20,7 +20,7 @@ public class RestControllerWithEureka {
 
 	@GetMapping("/fromOtherClientWithEureka")
 	public String readFromOtherClient() {
-		List<ServiceInstance> instances = discoveryClient.getInstances("FIRST EUREKA CLIENT");
+		List<ServiceInstance> instances = discoveryClient.getInstances("FIRSTEUREKACLIENT");
 		String host = instances.get(0).getUri().toString();
 		String mapping = "/message";
 		String uri = host + mapping;

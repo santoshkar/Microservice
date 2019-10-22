@@ -13,10 +13,10 @@ public class RestControllerWithoutEureka {
 
 	@GetMapping("/fromOtherClientNoEureka")
 	public String readFromOtherClient() {
-		String host = "http://localhost:8080";
+		String host = "http://localhost:8080";	//First Micro-service - service1
 		String mapping = "/message";
 		String uri = host+mapping;
-		String msg = restTemplate.getForObject(uri, String.class).toString();
+		String msg = restTemplate.getForObject(uri, String.class);
 		System.out.println(msg);
 		return msg;
 	}

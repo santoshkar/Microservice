@@ -7,7 +7,7 @@ security:
     oauth2:
         resource:
             jwt:
-                key-value: -----BEGIN PUBLIC KEY-----MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsY9wY6rwdql0GCPFxu7eEypLC8TkDQHgaFlmP5QBf7Il4/8/ogTrT1cLF/fMrfhoJrPeZWjzP6NmaxttCUcki8JSbmaxdYNnIPHsPFvqr1DlpvikdKiG5lkKS27E9uUQ1XmeXh9Vhn9QwLQyXl5bbbjlDewiCzB/MuKlbuuxFsb7ZPpBD+rE69efUfTu8dZPa5QzTugqxqAe9q2soLPxYyh91BGjVGWMN9wwWnM+WaQ9IehuQko7drlvJRVhPow9zvzTanaJckn02+Ubj5+LFQ8yYNe/PQQSS+noaQtmCqRfVhL161F6yivj16EuYJhkUn3TQQTbDhSU3CcdMcX5lQIDAQAB-----END PUBLIC KEY-----
+                key-value: -----BEGIN PUBLIC KEY-----MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2MCxW4vXcNtAKvfJJPXkUMaJsPt2c4iy0smgEE6Wnqa2MSGl/VZnA0i5inpfhdIRc1lkvgCkzcnl1KjjZkiGiVnnnZeRDZQxAeYLU6ggGznVUrJ7sTqz04OIIlfGfs5XzNfzMRc6kUSHnCoA+MEaekKoQt6R0ggDCAYSuppnqYJ/80g0T8VZ8zptf4IUrQFyOcHVRDcB0BavaOmmb5AwlZL3Ql4KnV+frFvvl/8B7OtgoCzj+F5rnc5ibaViBEvRW+7C1vlrfvCvAuuaBoID5x4fbbxbDiA4T1/ca2LP4Ju/sUoWP1rX7Sr9Xih4zRuo2WHcmBGED04bPdzl/Wg+dQIDAQAB-----END PUBLIC KEY-----
 
 server:
     port: 9090

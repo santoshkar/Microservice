@@ -1,0 +1,75 @@
+In MacBook
+---------------------------------------------------------------------
+
+Step: 1: Geneate the keys
+==========================
+Santosh-MacBook-Pro:~ santoshkumarkar$ openssl genrsa -out jwt.pem 2048
+
+
+Step-2: Read the private Key
+============================
+
+(base) Santosh-MacBook-Pro:genkeys_santosh_jwt santoshkumarkar$ openssl
+OpenSSL> 
+
+OpenSSL> rsa -in jwt.pem
+writing RSA key
+-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEA2MCxW4vXcNtAKvfJJPXkUMaJsPt2c4iy0smgEE6Wnqa2MSGl
+/VZnA0i5inpfhdIRc1lkvgCkzcnl1KjjZkiGiVnnnZeRDZQxAeYLU6ggGznVUrJ7
+sTqz04OIIlfGfs5XzNfzMRc6kUSHnCoA+MEaekKoQt6R0ggDCAYSuppnqYJ/80g0
+T8VZ8zptf4IUrQFyOcHVRDcB0BavaOmmb5AwlZL3Ql4KnV+frFvvl/8B7OtgoCzj
++F5rnc5ibaViBEvRW+7C1vlrfvCvAuuaBoID5x4fbbxbDiA4T1/ca2LP4Ju/sUoW
+P1rX7Sr9Xih4zRuo2WHcmBGED04bPdzl/Wg+dQIDAQABAoIBAQCztQ9XF1pH93/8
+H/Rk8HmbfwAp/FL49x1MJl7PJlk6sH3dvkghAsHltyYd6dfI26IcQMGFxoLdG8ex
+yVTAOOFSf3fI8SESYQtAx7ocYgg8inaTWeezyTfO5f64eo3YFLw22dSHnvqv9mF4
+2Fp146RQOXPH/UBpIrtgq6hbjijkIAdnKm399GGMEBEvolQc2m7o52MQ7lAAs0zY
+uJy5yEiBwa1EKwMLu9rXoWA7CvGF6ETOmLYhMnkpFgdp9oLTY/3BmermJhYDfjR+
+uSaxkFeYOeo8yRtA5mjM+rsTPTPxCOVBQXLFKiAxFFzFTqU6zT/z3CsKbikqIc+z
+xv0yXRMBAoGBAPcgK0UaLKsyyLpM5wXxZfYkcfsDoYJTFLU5eiA+baQLsDTpGzk9
+g3nmfz2LJMTZbQXrfZjoxRJFIBQd3zgoi19+FpmdhEED2MGz0azf2+6nAMFNhzPR
+pWkUHkG7HPQyr+e29EvOdT0gs5yYayk795UiYiIVryjJxeZSe3jHnVbzAoGBAOCJ
+Tfv8JL8IRr6oQv4nCOKWkFLmpVLxFOjw/jK7XQkGEZOVc+731jyY86Z1R8k1cfDp
+UEniLZQD4QlC0WkiII1uKpIoMLyHDzhnnJ1YcZLMPoZF9Wq7aqHCefPgQLLBO/Ip
+y3HCecgzpNgOzpllyLzeXfZVCSlnjanP1ZY/6773AoGBANZGTV5wcJTMxuFKtvIf
+OrJvLWlh35O55/Wu7aaxmq2n+NQX3yQFo096PY+ma25HvFFqvA9unRnXWBY5RIhU
+F2zoTj5KJxecd0CVY1PLEs7efTgeugGDYTI4YHfL/zH6FS4MI8zrKhqjlTlNq3Uo
+aucj1gUJ2kO6mF653BeAtXtjAoGAIM4Otb0eBUcJRvvAZe+ADdLfnS0ThG2yl2H2
+UaUsL5BSaxSPzp8pDstt9aj25v/G+OKtl03TSOfULg00GT8iMGejEp2KmVDGOYBx
+0k9EsKTkkauQ8poVNzL5rFbcPQGcZ4IRtjoqnsRk1ig7qQ/E50s5wS6lWwZFHUU/
+OGd4YvsCgYEAiTfwsxH0BbobPDXFX039pnGVaH+O9bl56gtG7vj1f3xQCpaBu7NT
+o0mCXX9v/6mn9JlezrsuAO2Vb1y2AKxvH31gHYGoBFb2L176YV6rTJI2NZMz+80+
+S8Cl0bra/3Dz4Kj4VAOwrbrhC8Ri88vDBWX8yF5QZBUdzNcg4kBKDLA=
+-----END RSA PRIVATE KEY-----
+OpenSSL> 
+
+
+
+
+Step-3: Read the public Key
+============================
+
+OpenSSL> rsa -in jwt.pem -pubout
+writing RSA key
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2MCxW4vXcNtAKvfJJPXk
+UMaJsPt2c4iy0smgEE6Wnqa2MSGl/VZnA0i5inpfhdIRc1lkvgCkzcnl1KjjZkiG
+iVnnnZeRDZQxAeYLU6ggGznVUrJ7sTqz04OIIlfGfs5XzNfzMRc6kUSHnCoA+MEa
+ekKoQt6R0ggDCAYSuppnqYJ/80g0T8VZ8zptf4IUrQFyOcHVRDcB0BavaOmmb5Aw
+lZL3Ql4KnV+frFvvl/8B7OtgoCzj+F5rnc5ibaViBEvRW+7C1vlrfvCvAuuaBoID
+5x4fbbxbDiA4T1/ca2LP4Ju/sUoWP1rX7Sr9Xih4zRuo2WHcmBGED04bPdzl/Wg+
+dQIDAQAB
+-----END PUBLIC KEY-----
+OpenSSL> 
+
+
+
+
+
+
+
+
+
+
+
+

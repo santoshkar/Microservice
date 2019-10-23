@@ -7,6 +7,10 @@ spring:
   application:
     name: api-gateway
     
+  security:
+    user:
+      name: learning
+      password: letmein
 
 zuul:
   routes:
@@ -21,4 +25,4 @@ zuul:
 #      url: http://localhost:8090/spring-security-oauth-resource
 #    oauth:
 #      path: /oauth/**
-#      url: http://localhost:8081/spring-security-oauth-server/oauth 
+#      url: http://localhost:8081/spring-security-oauth-server/oauth

@@ -1,0 +1,27 @@
+Step-1
+=======
+First run the application, This application will be running on 8080 port.
+
+
+Step-2
+======
+Once you run the application, open POSTMAN, you have to sent a POST request
+
+1. In POSTMAN, change the type to               => POST
+2. In the URL enter:                            => http://localhost:8080/oauth/token
+3. Under the tab    -> Authorization, select
+                                Type            => Basic Auth
+                                Username        => learning
+                                Password        => letmein
+    (Note:  These are configured in the application.yml a clientId and clientSecret)
+4. Under the Tab    -> Body, select
+                                grant_type      => password
+                                username        => santosh
+                                password        => password
+    (Note:  These are configured in the DB in User table)
+
+Step-3
+======
+Now send the POST request. As response, you should be able to get the access_token
+
+

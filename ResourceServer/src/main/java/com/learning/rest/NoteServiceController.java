@@ -16,14 +16,14 @@ public class NoteServiceController {
 	@PreAuthorize("hasRole('CREATE_NOTE')")
 	@RequestMapping(value="/note", method=RequestMethod.POST)
 	public String createNote() {
-		
+
 		AccessTokenMapper accessTokenMapper = (AccessTokenMapper)
 				((OAuth2AuthenticationDetails) SecurityContextHolder.getContext().getAuthentication().getDetails()).getDecodedDetails();
-		
+
 		System.out.println("ID:"+accessTokenMapper.getId());
 		System.out.println("Name:"+accessTokenMapper.getName());
 		System.out.println("Email ID:"+accessTokenMapper.getUserName());
-		
+
 		return "Note has been created successfully";
 	}
 	
